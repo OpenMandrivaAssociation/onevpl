@@ -5,7 +5,7 @@
 %define oname oneVPL
 
 Name:           onevpl
-Version:        2021.6.0
+Version:        2022.0.2
 Release:        1
 Summary:        oneAPI Video Processing Library (oneVPL) dispatcher, tools, and examples
 License:        MIT
@@ -50,7 +50,7 @@ the oneAPI Video Processing Library (oneVPL) dispatcher
 %autosetup -p1 -n %{oname}-%{version}
 
 %build
-%cmake
+%cmake -DBUILD_PYTHON_BINDING=TRUE
 %make_build
 
 %install
