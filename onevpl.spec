@@ -21,6 +21,8 @@ BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(xcb)
 BuildRequires:  pkgconfig(wayland-client)
 
+Requires:	%{libpackage} = %{EVRD}
+
 %description
 The oneAPI Video Processing Library (oneVPL) provides a single video processing
 API for encode, decode, and video processing that works across a wide range of
@@ -44,13 +46,6 @@ Requires:	%{libpackage} = %{EVRD}
 This package contains the development headers and pkgconfig files for
 the oneAPI Video Processing Library (oneVPL) dispatcher
 
-%package samples
-Summary:        Examples for the oneAPI Video Processing Library (oneVPL) dispatcher
-Group:          Development/Languages/C and C++
-
-%description samples
-This package contains example applications for the oneAPI Video Processing Library (oneVPL) dispatcher.
-
 %prep
 %autosetup -p1 -n %{oname}-%{version}
 
@@ -60,6 +55,9 @@ This package contains example applications for the oneAPI Video Processing Libra
 
 %install
 %make_install -C build
+
+%files
+%{_bindir}/*
 
 %files -n %{libpackage}
 %license LICENSE 
@@ -73,6 +71,3 @@ This package contains example applications for the oneAPI Video Processing Libra
 %{_libdir}/pkgconfig/vpl.pc
 %{_libdir}/cmake/vpl/
 %{_datadir}/oneVPL/
-
-%files samples
-%{_bindir}/*
