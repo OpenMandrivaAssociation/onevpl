@@ -2,6 +2,8 @@
 %define libpackage %mklibname onevpl %{major}
 %define devpackage %mklibname -d onevpl
 
+%define oname oneVPL
+
 Name:           onevpl
 Version:        2021.6.0
 Release:        1
@@ -9,7 +11,7 @@ Summary:        oneAPI Video Processing Library (oneVPL) dispatcher, tools, and 
 License:        MIT
 Group:          Development
 URL:            https://github.com/oneapi-src/oneVPL
-Source0:        https://github.com/oneapi-src/oneVPL/archive/v%{version}/%{name}-%{version}.tar.gz
+Source0:        https://github.com/oneapi-src/oneVPL/archive/v%{version}/%{oname}-%{version}.tar.gz
 BuildRequires:  cmake
 BuildRequires:  pkgconfig
 BuildRequires:  pkgconfig(wayland-client)
@@ -45,7 +47,7 @@ Group:          Development/Languages/C and C++
 This package contains example applications for the oneAPI Video Processing Library (oneVPL) dispatcher.
 
 %prep
-%autosetup -p1 -n %{name}-%{version}
+%autosetup -p1 -n %{oname}-%{version}
 
 %build
 %cmake
