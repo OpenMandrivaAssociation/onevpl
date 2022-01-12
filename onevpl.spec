@@ -57,14 +57,14 @@ the oneAPI Video Processing Library (oneVPL) dispatcher
 %make_install -C build
 
 %files
+%license LICENSE 
+%doc %{_datadir}/doc/oneVPL/
 %{_bindir}/*
 
 %files -n %{libpackage}
-%license LICENSE 
 %{_libdir}/libvpl.so.%{major}*
 
 %files -n %{devpackage}
-%doc %{_datadir}/doc/oneVPL/
 %{_includedir}/vpl/
 %{_libdir}/libvpl.so
 %{_libdir}/oneVPL/libvpl_wayland.so
