@@ -66,9 +66,10 @@ This package contains example applications for the oneAPI Video Processing Libra
 %{_libdir}/libvpl.so.%{major}*
 
 %files -n %{devpackage}
-%doc 
+%doc %{_datadir}/doc/oneVPL/
 %{_includedir}/vpl/
 %{_libdir}/libvpl.so
+%{_libdir}/oneVPL/libvpl_wayland.so
 %{_libdir}/pkgconfig/vpl.pc
 %{_libdir}/cmake/vpl/
 %{_datadir}/oneVPL/
