@@ -14,6 +14,10 @@ URL:            https://github.com/oneapi-src/oneVPL
 Source0:        https://github.com/oneapi-src/oneVPL/archive/v%{version}/%{oname}-%{version}.tar.gz
 BuildRequires:  cmake
 BuildRequires:  pkgconfig
+BuildRequires:  pkgconfig(libdrm)
+BuildRequires:  pkgconfig(libva)
+BuildRequires:  pkgconfig(x11)
+BuildRequires:  pkgconfig(xcb)
 BuildRequires:  pkgconfig(wayland-client)
 
 %description
@@ -51,7 +55,7 @@ This package contains example applications for the oneAPI Video Processing Libra
 
 %build
 %cmake
-%make_buil
+%make_build
 
 %install
 %make_install -C build
