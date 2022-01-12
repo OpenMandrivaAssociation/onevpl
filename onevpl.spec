@@ -16,6 +16,7 @@ BuildRequires:  cmake
 BuildRequires:  pkgconfig
 BuildRequires:  pkgconfig(libdrm)
 BuildRequires:  pkgconfig(libva)
+BuildRequires:  pkgconfig(python)
 BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(xcb)
 BuildRequires:  pkgconfig(wayland-client)
