@@ -50,7 +50,7 @@ the oneAPI Video Processing Library (oneVPL) dispatcher
 %autosetup -p1 -n %{oname}-%{version}
 
 %build
-%cmake
+%cmake -DBUILD_PYTHON_BINDING
 %make_build
 
 %install
