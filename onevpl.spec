@@ -21,6 +21,7 @@ BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(xcb)
 BuildRequires:  pkgconfig(wayland-client)
 BuildRequires:  pkgconfig(wayland-protocols)
+BuildRequires:  pkgconfig(wayland-server)
 
 BuildRequires:  python3dist(pybind11)
 
@@ -61,7 +62,7 @@ the oneAPI Video Processing Library (oneVPL) dispatcher
 
 %files
 %license LICENSE 
-%doc %{_datadir}/doc/oneVPL/
+#doc #{_datadir}/doc/oneVPL/
 %{_bindir}/*
 
 %files -n %{libpackage}
