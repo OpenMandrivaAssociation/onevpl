@@ -50,6 +50,12 @@ Requires:	%{libpackage} = %{EVRD}
 This package contains the development headers and pkgconfig files for
 the oneAPI Video Processing Library (oneVPL) dispatcher
 
+%package -n python-%{name}
+Summary:    Python interface to %{name}
+
+%description -n python-%{name}
+This package contains python interfaces to %{name}.
+
 %prep
 %autosetup -p1 -n %{oname}-%{version}
 
