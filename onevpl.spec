@@ -71,7 +71,7 @@ the oneAPI Video Processing Library (oneVPL) dispatcher
 %files -n %{devpackage}
 %{_includedir}/vpl/
 %{_libdir}/libvpl.so
-%{_libdir}/oneVPL/libvpl_wayland.so
+#{_libdir}/oneVPL/libvpl_wayland.so
 %{_libdir}/pkgconfig/vpl.pc
 %{_libdir}/cmake/vpl/
-%{_datadir}/oneVPL/
+#{_datadir}/oneVPL/
