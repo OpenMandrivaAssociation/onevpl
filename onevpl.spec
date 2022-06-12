@@ -72,8 +72,8 @@ This package contains python interfaces to %{name}.
 %license LICENSE 
 %doc %{_datadir}/vpl/licensing/
 %{_bindir}/*
-%{_sysconfdir}/modulefiles/vpl
-%{_sysconfdir}/vpl/vars.sh
+%{_prefix}/etc/modulefiles/vpl
+%{_prefix}/etc/vpl/vars.sh
 %{_datadir}/vpl/examples/
 
 %files -n %{libpackage}
