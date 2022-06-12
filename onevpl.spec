@@ -20,6 +20,9 @@ BuildRequires:  pkgconfig(python)
 BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(xcb)
 BuildRequires:  pkgconfig(wayland-client)
+BuildRequires:  pkgconfig(wayland-protocols)
+
+BuildRequires:  python3dist(pybind11)
 
 Requires:	%{libpackage} = %{EVRD}
 
