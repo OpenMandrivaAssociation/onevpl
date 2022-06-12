@@ -87,3 +87,4 @@ This package contains python interfaces to %{name}.
 %{_libdir}/cmake/vpl/
 
 %files -n python-%{name}
+%{python_sitearch}/pyvpl.cpython-*
