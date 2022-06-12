@@ -54,7 +54,9 @@ the oneAPI Video Processing Library (oneVPL) dispatcher
 %autosetup -p1 -n %{oname}-%{version}
 
 %build
-%cmake -DBUILD_PYTHON_BINDING=1
+%cmake  \
+        -DBUILD_PYTHON_BINDING:BOOL=ON \
+        -DPYTHON_INSTALL_DIR:STRING=%{python_sitearch}
 %make_build
 
 %install
@@ -62,8 +64,11 @@ the oneAPI Video Processing Library (oneVPL) dispatcher
 
 %files
 %license LICENSE 
-#doc #{_datadir}/doc/oneVPL/
+%doc %{_datadir}/vpl/licensing/
 %{_bindir}/*
+%{_sysconfdir}/modulefiles/vpl
+%{_sysconfdir}/vpl/vars.sh
+%{_datadir}/vpl/examples/
 
 %files -n %{libpackage}
 %{_libdir}/libvpl.so.%{major}*
@@ -71,7 +76,8 @@ the oneAPI Video Processing Library (oneVPL) dispatcher
 %files -n %{devpackage}
 %{_includedir}/vpl/
 %{_libdir}/libvpl.so
-#{_libdir}/oneVPL/libvpl_wayland.so
+%{_libdir}/vpl/libvpl_wayland.so
 %{_libdir}/pkgconfig/vpl.pc
 %{_libdir}/cmake/vpl/
-#{_datadir}/oneVPL/
+
+%files -n python-%{name}
