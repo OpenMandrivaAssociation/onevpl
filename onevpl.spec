@@ -5,7 +5,7 @@
 %define oname oneVPL
 
 Name:           onevpl
-Version:        2022.2.2
+Version:        2023.0.0
 Release:        1
 Summary:        oneAPI Video Processing Library (oneVPL) dispatcher, tools, and examples
 License:        MIT
@@ -87,4 +87,4 @@ This package contains python interfaces to %{name}.
 %{_libdir}/cmake/vpl/
 
 %files -n python-%{name}
-%{python_sitearch}/pyvpl.cpython-*
+#{python_sitearch}/pyvpl.cpython-*
