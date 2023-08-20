@@ -1,0 +1,12 @@
+diff -up oneVPL-2023.3.1/tools/legacy/sample_common/include/vm/strings_defs.h.omv~ oneVPL-2023.3.1/tools/legacy/sample_common/include/vm/strings_defs.h
+--- oneVPL-2023.3.1/tools/legacy/sample_common/include/vm/strings_defs.h.omv~	2023-08-20 17:37:48.538393954 +0200
++++ oneVPL-2023.3.1/tools/legacy/sample_common/include/vm/strings_defs.h	2023-08-20 17:37:59.318440693 +0200
+@@ -8,7 +8,7 @@
+ #define __STRING_DEFS_H__
+ 
+ #ifndef __STDC_WANT_LIB_EXT1__
+-    #define __STDC_WANT_LIB_EXT1__
++    #define __STDC_WANT_LIB_EXT1__ 1
+ #endif
+ 
+ #include <memory.h>

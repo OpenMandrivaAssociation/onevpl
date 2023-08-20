@@ -1,5 +1,6 @@
 %define major 2
-%define libpackage %mklibname onevpl %{major}
+%define oldlibpackage %mklibname onevpl 2
+%define libpackage %mklibname onevpl
 %define devpackage %mklibname -d onevpl
 
 %define oname oneVPL
@@ -12,6 +13,7 @@ License:        MIT
 Group:          Development
 URL:            https://github.com/oneapi-src/oneVPL
 Source0:        https://github.com/oneapi-src/oneVPL/archive/v%{version}/%{oname}-%{version}.tar.gz
+Patch0:		onevpl-compile.patch
 BuildRequires:  cmake
 BuildRequires:  pkgconfig
 BuildRequires:  pkgconfig(libdrm)
@@ -23,7 +25,7 @@ BuildRequires:  pkgconfig(wayland-client)
 BuildRequires:  pkgconfig(wayland-protocols)
 BuildRequires:  pkgconfig(wayland-server)
 
-BuildRequires:  python3dist(pybind11)
+BuildRequires:  python%{pyver}dist(pybind11)
 
 Requires:	%{libpackage} = %{EVRD}
 
@@ -35,6 +37,7 @@ accelerators.
 %package -n %{libpackage}
 Summary:        oneAPI Video Processing Library (oneVPL) dispatcher
 Group:          System/Libraries
+%rename %{oldlibpackage}
 
 %description -n %{libpackage}
 The oneAPI Video Processing Library (oneVPL) provides a single video processing
