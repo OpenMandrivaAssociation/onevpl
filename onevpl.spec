@@ -1,7 +1,9 @@
 %define major 2
 %define oldlibpackage %mklibname onevpl 2
-%define libpackage %mklibname onevpl
-%define devpackage %mklibname -d onevpl
+%define olderlibpackage %mklibname onevpl
+%define libpackage %mklibname vpl
+%define devpackage %mklibname -d vpl
+%define olderdevpackage %mklibname -d vpl
 
 %define oname oneVPL
 
@@ -38,6 +40,7 @@ accelerators.
 Summary:        oneAPI Video Processing Library (oneVPL) dispatcher
 Group:          System/Libraries
 %rename %{oldlibpackage}
+%rename %{olderlibpackage}
 
 %description -n %{libpackage}
 The oneAPI Video Processing Library (oneVPL) provides a single video processing
@@ -48,6 +51,7 @@ accelerators.
 Summary:        Development files for oneAPI Video Processing Library (oneVPL) dispatcher
 Group:          Development/Languages/C and C++
 Requires:	%{libpackage} = %{EVRD}
+%rename %{olderdevpackage}
 
 %description -n %{devpackage}
 This package contains the development headers and pkgconfig files for
