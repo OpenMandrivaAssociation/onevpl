@@ -1,19 +1,21 @@
 %define major 2
 %define oldlibpackage %mklibname onevpl 2
-%define libpackage %mklibname onevpl
-%define devpackage %mklibname -d onevpl
+%define olderlibpackage %mklibname onevpl
+%define libpackage %mklibname vpl
+%define devpackage %mklibname -d vpl
+%define olderdevpackage %mklibname -d vpl
 
 %define oname oneVPL
 
 Name:           onevpl
-Version:        2023.3.1
+Version:        2.10.1
 Release:        1
 Summary:        oneAPI Video Processing Library (oneVPL) dispatcher, tools, and examples
 License:        MIT
 Group:          Development
 URL:            https://github.com/oneapi-src/oneVPL
-Source0:        https://github.com/oneapi-src/oneVPL/archive/v%{version}/%{oname}-%{version}.tar.gz
-Patch0:		onevpl-compile.patch
+Source0:        https://github.com/intel/libvpl/archive/refs/tags/v%{version}/libvpl-%{version}.tar.gz
+
 BuildRequires:  cmake
 BuildRequires:  pkgconfig
 BuildRequires:  pkgconfig(libdrm)
@@ -38,6 +40,7 @@ accelerators.
 Summary:        oneAPI Video Processing Library (oneVPL) dispatcher
 Group:          System/Libraries
 %rename %{oldlibpackage}
+%rename %{olderlibpackage}
 
 %description -n %{libpackage}
 The oneAPI Video Processing Library (oneVPL) provides a single video processing
@@ -48,6 +51,7 @@ accelerators.
 Summary:        Development files for oneAPI Video Processing Library (oneVPL) dispatcher
 Group:          Development/Languages/C and C++
 Requires:	%{libpackage} = %{EVRD}
+%rename %{olderdevpackage}
 
 %description -n %{devpackage}
 This package contains the development headers and pkgconfig files for
@@ -60,7 +64,7 @@ the oneAPI Video Processing Library (oneVPL) dispatcher
 #This package contains python interfaces to %{name}.
 
 %prep
-%autosetup -p1 -n %{oname}-%{version}
+%autosetup -p1 -n libvpl-%{version}
 
 %build
 %cmake  \
@@ -75,7 +79,7 @@ the oneAPI Video Processing Library (oneVPL) dispatcher
 %license LICENSE 
 %doc %{_datadir}/vpl/licensing/
 %{_bindir}/*
-%{_prefix}/etc/modulefiles/vpl
+#{_prefix}/etc/modulefiles/vpl
 %{_prefix}/etc/vpl/vars.sh
 %{_datadir}/vpl/examples/
 
