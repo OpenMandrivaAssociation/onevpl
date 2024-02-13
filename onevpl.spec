@@ -75,7 +75,7 @@ the oneAPI Video Processing Library (oneVPL) dispatcher
 %license LICENSE 
 %doc %{_datadir}/vpl/licensing/
 %{_bindir}/*
-%{_prefix}/etc/modulefiles/vpl
+#{_prefix}/etc/modulefiles/vpl
 %{_prefix}/etc/vpl/vars.sh
 %{_datadir}/vpl/examples/
 
