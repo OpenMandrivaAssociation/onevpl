@@ -13,7 +13,7 @@ License:        MIT
 Group:          Development
 URL:            https://github.com/oneapi-src/oneVPL
 Source0:        https://github.com/intel/libvpl/archive/refs/tags/v%{version}/libvpl-%{version}.tar.gz
-Patch0:		onevpl-compile.patch
+
 BuildRequires:  cmake
 BuildRequires:  pkgconfig
 BuildRequires:  pkgconfig(libdrm)
