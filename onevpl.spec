@@ -12,7 +12,7 @@ Summary:        oneAPI Video Processing Library (oneVPL) dispatcher, tools, and 
 License:        MIT
 Group:          Development
 URL:            https://github.com/oneapi-src/oneVPL
-Source0:        https://github.com/oneapi-src/oneVPL/archive/v%{version}/%{oname}-%{version}.tar.gz
+Source0:        https://github.com/intel/libvpl/archive/refs/tags/v%{version}/libvpl-%{version}.tar.gz
 Patch0:		onevpl-compile.patch
 BuildRequires:  cmake
 BuildRequires:  pkgconfig
@@ -60,7 +60,7 @@ the oneAPI Video Processing Library (oneVPL) dispatcher
 #This package contains python interfaces to %{name}.
 
 %prep
-%autosetup -p1 -n %{oname}-%{version}
+%autosetup -p1 -n libvpl-%{version}
 
 %build
 %cmake  \
