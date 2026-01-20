@@ -16,6 +16,7 @@ Group:          Development
 URL:            https://github.com/oneapi-src/oneVPL
 Source0:        https://github.com/intel/libvpl/archive/refs/tags/v%{version}/libvpl-%{version}.tar.gz
 
+BuildRequires:  make
 BuildRequires:  cmake
 BuildRequires:  pkgconfig
 BuildRequires:  pkgconfig(libdrm)
